@@ -1,0 +1,34 @@
+{
+  "project": [
+    {
+      "id": 1,
+      "projectDefaultImg": "assets/img/portfolio/web-development.jpeg",
+      "projectName": "Goal Tracker",
+      "projectCategory": "Web Development",
+      "projectDate": " Semester 2 Year 2",
+      "projectRole": "Coder",
+      "projectDescription": "My teammate and I develop a goal tracker website for our Web Development course using HTML, CSS, Javascript, MySQL and PHP. In this project, I contribute to the mentor part and utilise DataTables to disply the list of mentees and AJAX to avoid page-reloading whenever a form is submitted",
+      "projectURL": "string"
+    },
+    {
+      "id": 2,
+      "projectDefaultImg": "assets/img/portfolio/project.jpeg",
+      "projectName": "Academic Stress Talk",
+      "projectCategory": "Project",
+      "projectDate": " Semester 1 Year 2",
+      "projectRole": "Project Manager",
+      "projectDescription": "In the 'Thinking and Communication' course, we make a talk related to academic stress with my team members. As a project manager, I need to conduct the meeting to follow up with the milestones and progress of the project. Besides, I also need to assgin tasks to each member and communicate with BeFrienders Penang to ensure the success of the event.",
+      "projectURL": "string"
+    },
+    {
+      "id": 3,
+      "projectDefaultImg": "assets/img/portfolio/app-development.jpeg",
+      "projectName": "myDiary",
+      "projectCategory": "App Development",
+      "projectDate": " Semester 1 Year 2",
+      "projectRole": "Self-Learning",
+      "projectDescription": "I join GDSC event which teach us the basic concepts of 'Android Studio' through designing a 'myDiary' application which will save our diary and images. This application integrates with Firebase, Google Sign-in API and also TensorFlow Lite. Throughout this event, I learn a lot of techniques and skills that should be possessed while developing an application.",
+      "projectURL": "string"
+    }
+  ]
+}

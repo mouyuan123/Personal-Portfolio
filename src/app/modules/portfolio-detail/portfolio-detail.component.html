@@ -1,0 +1,104 @@
+<!-- If the project exists (not undefined), this will only be displayed -->
+<main *ngIf="project" id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Portfoio Details</h2>
+          <ol>
+            <li><a routerLink="/home">Home</a></li>
+            <li>Portfolio Details</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-8" data-aos="fade-right">
+            <div class="portfolio-details-slider swiper">
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div *ngFor="let image of project.projectImg; let first=first" [ngClass]="{active: first}" class="carousel-item ">
+                    <img src="{{image}}" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-2">
+              <button (click)="goBack()" class="btn btn-primary" type="button"><strong>&lt;&nbsp;&nbsp;Back to Previous Page</strong></button>
+              <!-- <button (click)="goBack()" class="btn btn-outline-danger" type="button">X&nbsp;&nbsp;Delete</button> -->
+              <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">X&nbsp;&nbsp;Delete</button>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-left">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Name</strong>: {{project.projectName}}</li>
+                <li><strong>Category</strong>: {{project.projectCategory}}</li>
+                <li><strong>Project Role</strong>: {{project.projectRole}}</li>
+                <li><strong>Project Semester</strong>: {{project.projectDate}}</li>
+                <li><strong>Project URL</strong>: <a class="text-break" href="{{project.projectURL}}" target="_blank">{{project.projectURL}}</a></li>
+              </ul>
+            </div>
+            <div *ngIf="isUpdate; then ifBlock else elseBlock"></div>
+            <ng-template #ifBlock>
+              <div class="portfolio-description">
+                <h2>Project Description</h2>
+                <p>
+                  {{project.projectDescription}}
+                </p>
+                <button (click)="isUpdate = false;" type="button" class="btn btn-info">Update</button>
+              </div>
+            </ng-template>
+            <ng-template #elseBlock>
+              <div class="portfolio-description">
+                <h2>Project Description</h2>
+              <!-- Whenever we define the "FormsModule", ngForm directive will be added automatically to our <form> tag and we need to use a template variable to catch it -->
+              <form #descriptForm="ngForm">
+                <!-- ngModel -> Two-way binding to bind the "description" value to "projectDescription" & we need to tell ngForm which variable it should track -->
+                <textarea [(ngModel)]="project.projectDescription" style="font-size: 14px;" class="form-control mb-3" name="description" rows="7"></textarea>
+                <button type="submit" (click)="isUpdate = true; updateProjectDescript()" type="button" class="btn btn-success">Save</button>
+              </form>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+    <!-- Delete Project Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Are you sure you want to delete this project?</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button (click)="deleteProject(); goBack()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>

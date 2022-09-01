@@ -5,6 +5,7 @@
   "projects": {
     "my-app": {
       "projectType": "application",
+      
       "schematics": {},
       "root": "",
       "sourceRoot": "src",

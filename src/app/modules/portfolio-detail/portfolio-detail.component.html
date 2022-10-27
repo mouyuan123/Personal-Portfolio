@@ -25,7 +25,7 @@
               <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div *ngFor="let image of project.projectImg; let first=first" [ngClass]="{active: first}" class="carousel-item ">
-                    <img src="{{image}}" class="d-block w-100" alt="...">
+                    <img style="max-width: 1000px; max-height: 700px" src="{{image}}" class="d-block w-100" alt="...">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -51,7 +51,7 @@
                 <li><strong>Category</strong>: {{project.projectCategory}}</li>
                 <li><strong>Project Role</strong>: {{project.projectRole}}</li>
                 <li><strong>Project Semester</strong>: {{project.projectDate}}</li>
-                <li><strong>Project URL</strong>: <a class="text-break" href="{{project.projectURL}}" target="_blank">{{project.projectURL}}</a></li>
+                <li *ngIf="project.projectURL"><strong>Project URL</strong>: <a class="text-break" href="{{project.projectURL}}" target="_blank">{{project.projectURL}}</a></li>
               </ul>
             </div>
               <div class="portfolio-description">

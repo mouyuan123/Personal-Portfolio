@@ -6,6 +6,6 @@ export interface Project{
     projectDate: string;
     projectRole: string;
     projectDescription: string;
-    projectURL: string;          // Link my project to "Github" for viewing
+    projectURL?: string;          // Link my project to "Github" for viewing
     projectImg?: string[];
 }

@@ -18,7 +18,14 @@ export class ProjectListService {
       "projectRole": "Developer",
       "projectDescription": `My teammate and I develop a goal tracker website for our Web Development course using HTML, CSS, Javascript, MySQL and PHP. 
                             In this project, I contribute to the mentor part and utilise DataTables to disply the list of mentees and AJAX to avoid page-reloading whenever a form is submitted`,
-      "projectURL": "string"
+      "projectURL": "https://github.com/houren928/gtracker-final",
+      "projectImg": ['assets/img/portfolio-detail/goal-page-1.png',
+                    'assets/img/portfolio-detail/goal-page-2.png',
+                    'assets/img/portfolio-detail/goal-page-3.png',
+                    'assets/img/portfolio-detail/goal-page-4.png',
+                    'assets/img/portfolio-detail/goal-page-5.png',
+                    'assets/img/portfolio-detail/goal-page-6.png',
+                    'assets/img/portfolio-detail/goal-page-7.png'],
     },
     {
       "id": 2,
@@ -29,18 +36,24 @@ export class ProjectListService {
       "projectRole": "Project Manager",
       "projectDescription": `In the 'Thinking and Communication' course, we make a talk related to academic stress with my team members. As a project manager, I need to conduct the meeting to follow up with the milestones and progress of the project. 
                             Besides, I also need to assgin tasks to each member and communicate with BeFrienders Penang to ensure the success of the event.`,
-      "projectURL": "string"
+      "projectImg": ['assets/img/portfolio-detail/talk-page-1.png',
+                    'assets/img/portfolio-detail/talk-page-2.png',
+                    'assets/img/portfolio-detail/talk-page-3.png',
+                    'assets/img/portfolio-detail/talk-page-4.png'],
     },
     {
       "id": 3,
       "projectDefaultImg": "assets/img/portfolio/app-development.jpeg",
-      "projectName": "myDiary",
+      "projectName": "iDiary",
       "projectCategory": "App Development",
       "projectDate": " Semester 1 Year 2",
       "projectRole": "Self-Learning",
       "projectDescription": `I join GDSC event which teach us the basic concepts of 'Android Studio' through designing a 'myDiary' application which will save our diary and images. This application integrates with Firebase, Google Sign-in API and also TensorFlow Lite. 
-                            Throughout this event, I learn a lot of techniques and skills that should be possessed while developing an application.`,
-      "projectURL": "string"
+                            Throughout this event, I learn a lot of techniques and skills that should be possessed while developing an application.
+                            However, I'm not be able to login due to deactivation of my Firebase account to this project due to inactivity for longer period.`,
+      "ProjectURL": `https://github.com/mouyuan123/iDiary`,
+      "projectImg":['assets/img/portfolio-detail/iDairy-page-1.jpeg',
+      ]
     },
     {
       "id": 4,
@@ -68,7 +81,11 @@ export class ProjectListService {
       "projectRole": "Project Manager",
       "projectDescription": `I was the project manager in this project. I need to coordinate meetings and discussions among team members to reach consensus about the green technologies to be chosen.
                             Besides, I also need to check the design of the we page and we use Wix.com to complete our webpage design.`,
-      "projectURL": "https://householdgreentech.wixsite.com/my-site"
+      "projectURL": "https://householdgreentech.wixsite.com/my-site",
+      "projectImg": ['assets/img/portfolio-detail/household-page-1.png',
+                    'assets/img/portfolio-detail/household-page-2.png',
+                    'assets/img/portfolio-detail/household-page-3.png',
+                    'assets/img/portfolio-detail/household-page-4.png'],
     }
   ]
 

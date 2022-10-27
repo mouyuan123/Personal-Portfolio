@@ -20,11 +20,11 @@
      </div>
 
       <div id="portfolio-container" class="container" data-aos="fade-up" data-aos-delay="100">
-        <div id="portfolio-cards" class="row row-cols-3">
+        <div id="portfolio-cards" class="row">
           <!-- Display the project list here -->
-          <div *ngFor="let project of projectToDisplay" class="col gy-3" data-aos="fade-up">
+          <div *ngFor="let project of filteredProject$ | async" class="col-12 col-md-4 gy-3 custom-project-size" data-aos="fade-up">
             <a #portfolio routerLink="/portfolio-detail/{{project.id}}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clicks for more info">
-              <div class="card position-relative" style="width: 18rem;">
+              <div class="card position-relative">
                 <img style="height: 185px" src="{{project.projectDefaultImg}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h4 class="card-title"><strong>{{project.projectName}}</strong></h4><hr>
@@ -33,17 +33,9 @@
               </div>
             </a>
           </div>
-          <div style="min-height: 296px" [style.height.px]="height" class="col gy-3 d-flex" data-aos="fade-up">
-            <div (click)="addProject = true" class="card shadow add-project-btn" style="width: 18rem;" data-bs-toggle="tooltip modal" data-bs-target="#exampleModal" data-bs-placement="bottom" title="Add Project" data-aos="fade-up">
-              <div class="card-body d-flex justify-content-center align-items-center">
-                <i class="bi bi-plus-lg"></i>
-              </div>
-            </div>
-          </div>
         </div>
       </div> 
      </div>
     </section>
  <!-- End Portfolio Section -->
  </main>
- <app-add-project-form *ngIf="addProject" (closeForm)="addProject = false"></app-add-project-form>

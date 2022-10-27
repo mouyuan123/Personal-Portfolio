@@ -2,22 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortfolioRoutingModule } from './portfolio-routing.module';
 import { PortfolioComponent } from './portfolio.component';
-import { AddProjectFormComponent } from 'src/app/components/add-project-form/add-project-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
-
+import { ProjectListService } from 'src/app/services/project-list.service';
 
 @NgModule({
   declarations: [
     PortfolioComponent,
-    AddProjectFormComponent
   ],
   imports: [
     CommonModule,
     PortfolioRoutingModule,
     ReactiveFormsModule,
-
-  ]
+  ],
+  // Services here
+  providers: [ProjectListService],
 })
 export class PortfolioModule { }

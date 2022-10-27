@@ -38,11 +38,8 @@
                 </button>
               </div>
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-2">
+            <div *ngIf="!isMobile" class="d-grid gap-2 d-md-flex justify-content-md-between mt-2">
               <button (click)="goBack()" class="btn btn-primary" type="button"><strong>&lt;&nbsp;&nbsp;Back to Previous Page</strong></button>
-              <!-- <button (click)="goBack()" class="btn btn-outline-danger" type="button">X&nbsp;&nbsp;Delete</button> -->
-              <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">X&nbsp;&nbsp;Delete</button>
             </div>
           </div>
 
@@ -57,27 +54,15 @@
                 <li><strong>Project URL</strong>: <a class="text-break" href="{{project.projectURL}}" target="_blank">{{project.projectURL}}</a></li>
               </ul>
             </div>
-            <div *ngIf="isUpdate; then ifBlock else elseBlock"></div>
-            <ng-template #ifBlock>
               <div class="portfolio-description">
                 <h2>Project Description</h2>
-                <p>
+                <p class="lh-lg">
                   {{project.projectDescription}}
                 </p>
-                <button (click)="isUpdate = false;" type="button" class="btn btn-info">Update</button>
               </div>
-            </ng-template>
-            <ng-template #elseBlock>
-              <div class="portfolio-description">
-                <h2>Project Description</h2>
-              <!-- Whenever we define the "FormsModule", ngForm directive will be added automatically to our <form> tag and we need to use a template variable to catch it -->
-              <form #descriptForm="ngForm">
-                <!-- ngModel -> Two-way binding to bind the "description" value to "projectDescription" & we need to tell ngForm which variable it should track -->
-                <textarea [(ngModel)]="project.projectDescription" style="font-size: 14px;" class="form-control mb-3" name="description" rows="7"></textarea>
-                <button type="submit" (click)="isUpdate = true; updateProjectDescript()" type="button" class="btn btn-success">Save</button>
-              </form>
+              <div *ngIf="isMobile" class="d-grid gap-2 d-md-flex justify-content-md-between mt-2">
+                <button (click)="goBack()" class="btn btn-primary" type="button"><strong>&lt;&nbsp;&nbsp;Back to Previous Page</strong></button>
               </div>
-            </ng-template>
           </div>
         </div>
       </div>
@@ -85,20 +70,3 @@
 
   </main><!-- End #main -->
 
-    <!-- Delete Project Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h3>Are you sure you want to delete this project?</h3>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button (click)="deleteProject(); goBack()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
-        </div>
-      </div>
-    </div>
-  </div>

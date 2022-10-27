@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PureCounterService } from 'src/app/services/pure-counter.service';
 import { interval, Subscription, map } from 'rxjs';
 
 
@@ -14,7 +13,27 @@ export class FactComponent implements OnInit {
   to = 232;
   timerSubscription1!: Subscription;
 
-  constructor(private pcs: PureCounterService) { 
+  facts: any[] = 
+  [
+    {
+      'title': 'Communicative',
+      'content': `I'm willing to know more friends and enjoying doing projects with my team members.`
+    },
+    {
+      'title': 'Matcha Lover',
+      'content': `I love matcha flavour very much, especially the Niko Neko brand.`
+    },
+    {
+      'title': 'Punctuality',
+      'content': `I appreciate my time and I will allocate the time fairly among leisure, studying, and exercising.`
+    },
+    {
+      'title': 'Food Aficionado',
+      'content': `As long as there is delicous and aromatic food or desserts, I'll be survived!`
+    },
+  ]
+
+  constructor() { 
 
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { ProjectListService } from 'src/app/services/project-list.service';
 import { Project } from 'src/app/interface/projects';
-import { ProjectGeneratorService } from 'src/app/services/project-generator.service';
 // To determine the activated / current visited route
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -17,11 +17,34 @@ export class PortfolioDetailComponent implements OnInit {
   project!: Project;
   // Toggle the "Update" & "Save" button for project description
   isUpdate: boolean = true;
+  // Check whether is mobile version
+  isMobile!: boolean;
 
-  constructor(private route: ActivatedRoute, private pgs: ProjectGeneratorService, private location: Location, private toast: ToastrService) { }
+  constructor
+  (
+    private route: ActivatedRoute, 
+    private location: Location, 
+    private toast: ToastrService, 
+    private projectList: ProjectListService
+  ) { }
 
+  @HostListener('window:resize', ['$event'])
+  onResize($event: any){
+    if(window.screen.width <= 991 || window.innerWidth <= 991){
+      this.isMobile = true;
+    }
+    else{
+      this.isMobile = false;
+    }
+  }
 
   ngOnInit(): void {
+    if(window.screen.width <= 991 || window.innerWidth <= 991){
+      this.isMobile = true;
+    }
+    else{
+      this.isMobile = false;
+    }
     this.getProject();
   }
 
@@ -29,26 +52,10 @@ export class PortfolioDetailComponent implements OnInit {
    * Display the specific project information when it is clicked
    */
   getProject(): void{
-    const projectID = String(this.route.snapshot.paramMap.get("pid"));
-    this.pgs.getProject(projectID).subscribe(project => {this.project = project;});
+    const projectID = this.route.snapshot.paramMap.get("pid");
+    this.projectList.getProject(Number(projectID)).subscribe(project => this.project = project);
   }
 
-  /**
-   * Display the specific project information when it is clicked
-   */
-   deleteProject(): void{
-    if(this.project.id){
-      this.pgs.deleteProject(this.project.id).subscribe();
-    }
-  }
-
-  /**
-   * Update project description of specific project
-   */
-  updateProjectDescript(): void{
-    this.pgs.updateProjectDescript(this.project).subscribe();
-    this.showSuccess();
-  }
 
   /**
    * Display success toast when change the description successfully

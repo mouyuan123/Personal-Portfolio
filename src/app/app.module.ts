@@ -28,7 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TypewriterService } from './services/typewriter.service';
 import { PureCounterService } from './services/pure-counter.service';
 import { WayPointService } from './services/way-point.service';
-import { ProjectGeneratorService } from './services/project-generator.service';
+import { ProjectListService } from './services/project-list.service';
 
 // Directives
 
@@ -55,7 +55,7 @@ import { ProjectGeneratorService } from './services/project-generator.service';
     ToastrModule.forRoot()
   ],
   // Services here
-  providers: [TypewriterService, PureCounterService, WayPointService, ProjectGeneratorService],
+  providers: [TypewriterService, PureCounterService, WayPointService, ProjectListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

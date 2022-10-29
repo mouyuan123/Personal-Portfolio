@@ -37,24 +37,6 @@ export class ContactComponent implements OnInit {
           this.showFailure();
         }
       })
-      
-    //   Email.send({
-    //     Host : "smtp.elasticemail.com",
-    //     Username : "mouyuancheng2@gmail.com",
-    //     Password : "96AEE1B477E466D57C0F96953F25EADE9DF7",
-    //     To : "mouyuancheng2@gmail.com",
-    //     From : "mouyuancheng2@gmail.com",
-    //     Subject : `${this.fromSubject}`,
-    //     Body : `<h2><strong>This email is sent from ${this.fromEmail}</strong></h2><h3>Hello, I am ${this.fromName}.</h3>
-    //             <p>${this.fromMessage}</p>`
-    //     }
-    //     ).catch((e: any) => alert(e));
-    //     this.resetForm();
-    //     this.showSuccess();
-    // }
-    // else{
-    //   this.showFailure();
-    // }
     this.resetForm();
 }
   }

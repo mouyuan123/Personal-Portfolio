@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: false,
+  formUrl: `https://formspree.io/f/xnqrgwav`
 };

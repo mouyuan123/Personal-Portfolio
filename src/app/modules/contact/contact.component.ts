@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
-// To use the SMTP API from elastic mail
-import '../../../assets/js/smtp.js';
-declare let Email: any
 // Toast service from ngx-toastr
 import { ToastrService } from 'ngx-toastr';
+import { EmailService } from 'src/app/services/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,7 +19,7 @@ export class ContactComponent implements OnInit {
   // Use to check whether the email entered is valid
   pattern = new RegExp("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$");
 
-  constructor(private toast: ToastrService) { }
+  constructor(private toast: ToastrService, private email: EmailService) { }
 
   ngOnInit(): void {
   }
@@ -31,24 +29,35 @@ export class ContactComponent implements OnInit {
     this.isClicked = true;
     // Send the email only if all the input fields are filled
     if(form.valid){
-      Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "mouyuancheng2@gmail.com",
-        Password : "96AEE1B477E466D57C0F96953F25EADE9DF7",
-        To : "mouyuancheng2@gmail.com",
-        From : "mouyuancheng2@gmail.com",
-        Subject : `${this.fromSubject}`,
-        Body : `<h2><strong>This email is sent from ${this.fromEmail}</strong></h2><h3>Hello, I am ${this.fromName}.</h3>
-                <p>${this.fromMessage}</p>`
+      this.email.sendEmail(form).subscribe(response => {
+        if(response.ok){
+          this.showSuccess();
         }
-        ).catch((e: any) => alert(e));
-        this.resetForm();
-        this.showSuccess();
-    }
-    else{
-      this.showFailure();
-    }
+        else{
+          this.showFailure();
+        }
+      })
+      
+    //   Email.send({
+    //     Host : "smtp.elasticemail.com",
+    //     Username : "mouyuancheng2@gmail.com",
+    //     Password : "96AEE1B477E466D57C0F96953F25EADE9DF7",
+    //     To : "mouyuancheng2@gmail.com",
+    //     From : "mouyuancheng2@gmail.com",
+    //     Subject : `${this.fromSubject}`,
+    //     Body : `<h2><strong>This email is sent from ${this.fromEmail}</strong></h2><h3>Hello, I am ${this.fromName}.</h3>
+    //             <p>${this.fromMessage}</p>`
+    //     }
+    //     ).catch((e: any) => alert(e));
+    //     this.resetForm();
+    //     this.showSuccess();
+    // }
+    // else{
+    //   this.showFailure();
+    // }
+    this.resetForm();
 }
+  }
 
   // Display a success toast when project is added successfully
   showSuccess() {

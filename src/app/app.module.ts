@@ -29,6 +29,7 @@ import { TypewriterService } from './services/typewriter.service';
 import { PureCounterService } from './services/pure-counter.service';
 import { WayPointService } from './services/way-point.service';
 import { ProjectListService } from './services/project-list.service';
+// import { EmailService } from './services/email.service';
 
 // Directives
 

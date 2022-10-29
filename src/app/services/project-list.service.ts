@@ -51,7 +51,7 @@ export class ProjectListService {
       "projectDescription": `I join GDSC event which teach us the basic concepts of 'Android Studio' through designing a 'myDiary' application which will save our diary and images. This application integrates with Firebase, Google Sign-in API and also TensorFlow Lite. 
                             Throughout this event, I learn a lot of techniques and skills that should be possessed while developing an application.
                             However, I'm not be able to login due to deactivation of my Firebase account to this project due to inactivity for longer period.`,
-      "ProjectURL": `https://github.com/mouyuan123/iDiary`,
+      "projectURL": `https://github.com/mouyuan123/iDiary`,
       "projectImg":['assets/img/portfolio-detail/iDairy-page-1.jpeg',
       ]
     },

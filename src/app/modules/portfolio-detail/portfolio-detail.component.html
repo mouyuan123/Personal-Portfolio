@@ -48,7 +48,7 @@
                 <li><strong>Name</strong>: {{project.Name}}</li>
                 <li><strong>Role</strong>: {{project.Role}}</li>
                 <li *ngIf="project.URL"><strong>Project URL</strong>: <a class="text-break" href="{{project.URL}}" target="_blank">Click to see</a></li>
-                <li><strong>Technology</strong>: {{project.Tech}}</li>
+                <li *ngIf="project.Tech"><strong>Technology</strong>: {{project.Tech}}</li>
               </ul>
             </div>
               <div class="portfolio-description">

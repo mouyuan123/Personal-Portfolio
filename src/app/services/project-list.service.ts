@@ -95,17 +95,13 @@ export class ProjectListService {
       'assets/img/weather/f.png',
       'assets/img/weather/g.png'],
     },
-    // {
-    //   "id": 4,
-    //   "Name": "Academic Stress Talk",
-    //   "Role": "Project Manager",
-    //   "Description": `In the 'Thinking and Communication' course, we make a talk related to academic stress with my team members. As a project manager, I need to conduct the meeting to follow up with the milestones and progress of the project. 
-    //                         Besides, I also need to assgin tasks to each member and communicate with BeFrienders Penang to ensure the success of the event.`,
-    //   "images": ['assets/img/portfolio-detail/talk-page-1.png',
-    //                 'assets/img/portfolio-detail/talk-page-2.png',
-    //                 'assets/img/portfolio-detail/talk-page-3.png',
-    //                 'assets/img/portfolio-detail/talk-page-4.png'],
-    // },
+    {
+      "id": 6,
+      "Name": "Chung De Volunteering",
+      "Role": "Volunteer",
+      "Description": `On December 25, 2021, my friends and I participated in a post-flood cleanup effort in Taman Seri Muda, Shah Alam. We volunteered to assist in cleaning up the kindergarten area and also helped other residents tidy up their homes. It was a tiring yet unforgettable day.`,
+      "images": ['assets/img/volunteer/a.jpg'],
+    },
   ]
 
   constructor() { }

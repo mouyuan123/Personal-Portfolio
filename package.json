@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server --watch virtual-db/project.json"
+    "server": "json-server --watch virtual-db/project.json",
+    "deploy": "ng deploy --base-href=/Personal-Portfolio/"
   },
   "private": true,
   "dependencies": {

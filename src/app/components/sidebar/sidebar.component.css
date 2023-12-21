@@ -1,0 +1,8 @@
+#navbar ul li a{
+    color: rgba(0, 0, 0, 0.7);
+    font-family: "Quicksand", Arial, sans-serif;
+}
+
+.nav-link.active{
+    font-weight: 700;
+}

@@ -20,48 +20,51 @@
       <div class="container">
         <div class="row gy-4">
 
-          <div class="col-lg-8" data-aos="fade-right">
-            <div class="portfolio-details-slider swiper">
-              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div *ngFor="let image of project.projectImg; let first=first" [ngClass]="{active: first}" class="carousel-item ">
-                    <img style="max-width: 1000px; max-height: 700px" src="{{image}}" class="d-block w-100" alt="...">
-                  </div>
+          <div class="col-12" data-aos="fade-right">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div *ngFor="let image of project.images; let first=first" [ngClass]="{active: first}" class="carousel-item ">
+                  <img src="{{image}}" class="d-block w-100" alt="...">
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
-            </div>
-            <div *ngIf="!isMobile" class="d-grid gap-2 d-md-flex justify-content-md-between mt-2">
-              <button (click)="goBack()" class="btn btn-primary" type="button"><strong>&lt;&nbsp;&nbsp;Back to Previous Page</strong></button>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
 
-          <div class="col-lg-4" data-aos="fade-left">
+          <div class="col-12" data-aos="fade-left">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3 class="d-flex align-items-center">
+                <i class="bi bi-sticky me-2"></i>
+                <span>About</span>
+              </h3>
               <ul>
-                <li><strong>Name</strong>: {{project.projectName}}</li>
-                <li><strong>Category</strong>: {{project.projectCategory}}</li>
-                <li><strong>Project Role</strong>: {{project.projectRole}}</li>
-                <li><strong>Project Semester</strong>: {{project.projectDate}}</li>
-                <li *ngIf="project.projectURL"><strong>Project URL</strong>: <a class="text-break" href="{{project.projectURL}}" target="_blank">{{project.projectURL}}</a></li>
+                <li><strong>Name</strong>: {{project.Name}}</li>
+                <li><strong>Role</strong>: {{project.Role}}</li>
+                <li *ngIf="project.URL"><strong>Project URL</strong>: <a class="text-break" href="{{project.URL}}" target="_blank">Click to see</a></li>
+                <li><strong>Technology</strong>: {{project.Tech}}</li>
               </ul>
             </div>
               <div class="portfolio-description">
-                <h2>Project Description</h2>
+                <h2>Description</h2>
                 <p class="lh-lg">
-                  {{project.projectDescription}}
+                  {{project.Description}}
                 </p>
               </div>
-              <div *ngIf="isMobile" class="d-grid gap-2 d-md-flex justify-content-md-between mt-2">
-                <button (click)="goBack()" class="btn btn-primary" type="button"><strong>&lt;&nbsp;&nbsp;Back to Previous Page</strong></button>
+              <div *ngIf="project.Highlight" class="portfolio-description">
+                <h2>Highlight</h2>
+                <p class="lh-lg">
+                  {{project.Highlight}}
+                </p>
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
+                <button id="backBtn" (click)="goBack()" class="btn btn-primary" type="button"><strong>&lt;&nbsp;&nbsp;Back to Previous Page</strong></button>
               </div>
           </div>
         </div>

@@ -11,44 +11,36 @@ export class SkillComponent implements OnInit {
   skills: any[] = 
   [
     {
-    'skill': `HTML, CSS, Bootstrap`,
+      'skill': `Angular + Node.js + Express.js + MongoDB`,
+      'percentage': `85`
+    },
+    {
+      'skill': `Spring Boot + JPA + Thymeleaf + MySQL + Ajax`,
+      'percentage': `70`
+    },
+    {
+      'skill': `Angular + ASP.NET + SQL Server`,
+      'percentage': `70`
+    },
+    {
+      'skill': `ML (Standard Scaling, PCA, SMOTE, MLP)`,
+      'percentage': `75`
+    },
+    {
+    'skill': `Angular + PrimeNG`,
     'percentage': `80`
     },
     {
-      'skill': `Javascript, Typescript`,
-      'percentage': `70`
+      'skill': `Firebase`,
+      'percentage': `60`
     },
     {
-      'skill': `Angular, PrimeNg, Angular Material`,
-      'percentage': `70`
+      'skill': `Java, Javascript, Typescript`,
+      'percentage': `75`
     },
     {
-      'skill': `PHP + MySQL`,
-      'percentage': `70`
-    },
-    {
-      'skill': `Java`,
-      'percentage': `80`
-    },
-    {
-      'skill': `Python`,
-      'percentage': `70`
-    },
-    {
-      'skill': `Wix`,
-      'percentage': `80`
-    },
-    {
-      'skill': `Android Studio`,
-      'percentage': `50`
-    },
-    {
-      'skill': `Angular + Firebase`,
-      'percentage': `80`
-    },
-    {
-      'skill': `Github`,
-      'percentage': `80`
+      'skill': `Python, PHP`,
+      'percentage': `60`
     },
   ]
 
